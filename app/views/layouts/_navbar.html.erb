@@ -6,19 +6,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"></a></li>
-            <li><a class="dropdown-item" href="#">Another</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something </a></li>
-          </ul>
-        </li>  
+        <a class="nav-link"  href=<%=root_path%>>Home</a>
         <a class="nav-link" href=<%= help_path %>>Help</a>
-        <a class="nav-link" aria-current="page" href="#">Login</a>
+        <% if logged_in? %>
+          <a class="nav-link" href=<%= help_path %>>User</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Account
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Profile", current_user, class:"dropdown-item" %></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= button_to "Log out", logout_path,class:"dropdown-item", method: :delete %></li>
+            </ul>
+          </li> 
+        <% else %>
+          <li><%= link_to "Log in", login_path, class:"nav-link" %></li>
+        <% end %>  
       </ul>
     </div>
   </div>
