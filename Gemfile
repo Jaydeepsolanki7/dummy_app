@@ -13,6 +13,9 @@ gem 'bcrypt', '3.1.13'
 gem "sprockets-rails"
 
 #
+gem 'will_paginate', '~> 3.0'
+
+#
 gem 'rails-controller-testing'
 
 # Use sqlite3 as the database for Active Record
@@ -26,6 +29,9 @@ gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+
+#
+gem "faker", "3.2.1"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
