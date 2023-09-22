@@ -31,6 +31,15 @@ gem "jsbundling-rails"
 gem "turbo-rails"
 
 #
+gem 'image_processing',"1.12.2"
+
+#
+gem "mini_magick","4.12.0"
+
+#
+gem "active_storage_validations", "1.0.4"
+
+#
 gem "faker", "3.2.1"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
